@@ -34,7 +34,7 @@ MAMBA CODE هو موقع تعليمي عصري لتعلم البرمجة بال�
 ## 🚀 رابط الموقع المباشر
 
 > سيتم التفعيل بعد النشر على GitHub Pages  
-> 📎 https://your-username.github.io/mambacode-site/
+> 📎 https://zamora77.github.io/mambacode-site/
 
 
 
@@ -100,7 +100,7 @@ It offers a clean UI, smart registration, and a seamless learning experience.
 
 ## 📡 Live Demo
 
-🔗 [View Site on GitHub Pages](https://your-username.github.io/mambacode-site/)
+🔗 https://zamora77.github.io/mambacode-site/
 
 
 © 2025 MAMBA CODE. جميع الحقوق محفوظة.
