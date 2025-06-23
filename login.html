@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تسجيل الدخول - MAMBA CODE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+        <!-- 🌙 زر تغيير الوضع -->
+    <button id="modeToggle" class="cta-button fixed-toggle">🌙 الوضع الليلي</button>
+
+    <!-- 💬 زر واتساب -->
+    <a href="https://wa.me/201552932225" class="whatsapp-float" target="_blank" title="تواصل معنا واتساب">💬</a>
+  <section class="register">
+    <h2>🔐 تسجيل الدخول</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required />
+      <input type="password" id="loginPassword" placeholder="كلمة المرور" required />
+      <button type="submit">دخول</button>
+    </form>
+    <p id="loginMessage" class="hidden">✅ تم الدخول، جارٍ تحويلك...</p>
+  </section>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3uKTJmXGcTYbAlVs-5VrvZSMsgM6hfIk",
+      authDomain: "mambacode-33774.firebaseapp.com",
+      databaseURL: "https://mambacode-33774-default-rtdb.firebaseio.com",
+      projectId: "mambacode-33774",
+      storageBucket: "mambacode-33774.firebasestorage.app",
+      messagingSenderId: "462341832014",
+      appId: "1:462341832014:web:7bdee8c034b3d74b5e721f",
+      measurementId: "G-SS5ZPD26DL"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- Login Script -->
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+        
+  // 🌙 تفعيل الوضع الليلي/النهاري
+  const toggleBtn = document.getElementById("modeToggle");
+  let isLight = localStorage.getItem("mode") === "light";
+
+  const applyMode = () => {
+    if (isLight) {
+      document.body.classList.add("light-mode");
+      toggleBtn.textContent = "☀️ الوضع النهاري";
+    } else {
+      document.body.classList.remove("light-mode");
+      toggleBtn.textContent = "🌙 الوضع الليلي";
+    }
+  };
+
+  if (toggleBtn) {
+    applyMode();
+    toggleBtn.addEventListener("click", () => {
+      isLight = !isLight;
+      localStorage.setItem("mode", isLight ? "light" : "dark");
+      applyMode();
+    });
+  }
+
+
+      if (!email || !password) {
+        alert("يرجى إدخال البريد وكلمة المرور");
+        return;
+      }
+
+      firebase.database().ref("registrations").once("value", snapshot => {
+        const users = snapshot.val() || {};
+        const match = Object.values(users).find(user =>
+          user.email === email && user.password === password
+        );
+
+       if (match) {
+         localStorage.setItem("userName", match.name);
+         document.getElementById("loginMessage").classList.remove("hidden");
+         setTimeout(() => {
+         window.location.href = "courses.html";
+        }, 1500);
+        } else {
+          alert("البريد أو كلمة المرور غير صحيحة.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كورسات MAMBA CODE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toast" class="toast">مرحبًا يا بطل، جاهز تبدأ الرحلة؟ 💻</div>
+    <!-- 🌙 زر تغيير الوضع -->
+    <button id="modeToggle" class="cta-button fixed-toggle">🌙 الوضع الليلي</button>
+
+    <!-- 💬 زر واتساب -->
+    <a href="https://wa.me/201552932225" class="whatsapp-float" target="_blank" title="تواصل معنا واتساب">💬</a>
+
+    <header class="hero">
+  <div class="container">
+    <h1 class="logo">MAMBA CODE</h1>
+    <p id="welcomeMsg">مرحباً!</p>
+    <p id="currentTime" class="clock-text">00:00:00</p>
+
+    <button id="logoutBtn" class="cta-button danger">تسجيل الخروج</button>
+  </div>
+    </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="logo">MAMBA CODE</h1>
+      <h2>📚 الكورسات المتاحة</h2>
+      <ul class="course-list">
+        <li>💻 كورس HTML & CSS من الصفر</li>
+        <li>🛠 كورس JavaScript العملي</li>
+        <li>🚀 كورس تطوير واجهات المواقع (Frontend)</li>
+      </ul>
+      <a href="index.html" class="cta-button">العودة للرئيسية</a>
+    </div>
+    <div class="video-gallery">
+  <h3>🎥 فيديوهات الكورسات</h3>
+  <iframe width="360" height="215" src="https://www.youtube.com/embed/3JluqTojuME" frameborder="0" allowfullscreen></iframe>
+  <iframe width="360" height="215" src="https://www.youtube.com/embed/PkZNo7MFNFg" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  </section>
+
+<script>
+  const toast = document.getElementById("toast");
+  const userName = localStorage.getItem("userName");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+    
+  // 🌙 تفعيل الوضع الليلي/النهاري
+  const toggleBtn = document.getElementById("modeToggle");
+  let isLight = localStorage.getItem("mode") === "light";
+
+  const applyMode = () => {
+    if (isLight) {
+      document.body.classList.add("light-mode");
+      toggleBtn.textContent = "☀️ الوضع النهاري";
+    } else {
+      document.body.classList.remove("light-mode");
+      toggleBtn.textContent = "🌙 الوضع الليلي";
+    }
+  };
+
+  if (toggleBtn) {
+    applyMode();
+    toggleBtn.addEventListener("click", () => {
+      isLight = !isLight;
+      localStorage.setItem("mode", isLight ? "light" : "dark");
+      applyMode();
+    });
+  }
+
+
+  if (userName) {
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour >= 5 && hour < 12) return "☀️ صباح الخير";
+      if (hour >= 12 && hour < 18) return "🌤 مساء الخير";
+      return "🌌 مساء الفل  ";
+    }
+
+    // ✅ ترحيب حسب الوقت
+    welcomeMsg.textContent = `${getGreeting()}، ${userName} 👋`;
+
+    // 🔔 إشعار ترحيبي بعد ثانيتين
+    setTimeout(() => {
+      toast.classList.add("show");
+    }, 1500);
+
+    // 🔕 يختفي بعد 5 ثواني
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 7000);
+  } else {
+    // ⛔ تحويل لو مش مسجل
+    window.location.href = "login.html";
+  }
+
+  // 🔓 زر تسجيل الخروج
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("userName");
+    window.location.href = "login.html";
+  });
+</script>
+
+
+</body>
+</html>

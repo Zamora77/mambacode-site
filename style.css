@@ -1,0 +1,208 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Orbitron', sans-serif;
+  background:#111; color:#fff; direction:rtl;
+}
+.hero {
+  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  padding:100px 20px; text-align:center;
+}
+.logo{font-size:48px;color:#0f0;margin-bottom:10px;}
+.tagline{font-size:20px;margin-bottom:30px;color:#ccc;}
+.cta-button{
+  background:#0f0;color:#000;padding:12px 25px;
+  text-decoration:none;border-radius:5px;
+  font-weight:bold;transition:background .3s;
+}
+.cta-button:hover{background:#1dff1d;}
+.features{background:#1a1a1a;padding:60px 20px;text-align:center;}
+.features h2{font-size:32px;margin-bottom:40px;color:#0f0;}
+.feature-list{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;}
+.feature{
+  background:#222;padding:20px;border-radius:8px;
+  width:250px;border:1px solid #333;
+}
+.feature h3{color:#0f0;margin-bottom:10px;}
+.register{
+  padding:60px 20px;text-align:center;background:#151515;
+}
+.register h2{font-size:28px;color:#0f0;margin-bottom:20px;}
+.register form{
+  display:flex;flex-direction:column;gap:15px;
+  max-width:400px;margin:auto;
+}
+.register input{
+  padding:10px;border:none;border-radius:5px;
+}
+.register button{
+  background:#0f0;color:#000;padding:10px;
+  border:none;border-radius:5px;font-weight:bold;
+}
+.register button:hover{background:#1dff1d;}
+.stats-section {
+  background: #111;
+  color: #0f0;
+  padding: 40px 20px;
+  text-align: center;
+}
+.stats-section h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+.stats-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.stats-section li {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #ccc;
+}
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.course-list li {
+  background: #1a1a1a;
+  padding: 12px;
+  margin: 10px auto;
+  max-width: 400px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #0f0;
+}
+.video-gallery {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.video-gallery iframe {
+  border-radius: 10px;
+}
+.cta-button.danger {
+  background: #f33;
+  color: white;
+}
+.cta-button.danger:hover {
+  background: #ff5555;
+}
+
+/* Animation welcome */
+#welcomeMsg {
+  font-size: 20px;
+  margin-top: 10px;
+  animation: fadeInUp 1s ease-in-out forwards;
+  opacity: 0;
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hidden{display:none;}
+#thanksMessage{margin-top:15px;color:#0f0;font-weight:bold;}
+.footer{padding:20px;text-align:center;background:#000;font-size:14px;color:#777;}
+.scroll-fade{
+  opacity:0;transform:translateY(40px);
+  transition:opacity 1s ease,transform 1s ease;
+}
+.scroll-fade.visible{
+  opacity:1;transform:translateY(0);
+}
+@media (max-width:768px){
+  .feature-list{flex-direction:column;align-items:center;}
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #0f0;
+  color: #000;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.clock-text {
+  color: #ccc;
+  font-size: 18px;
+  margin-top: 5px;
+  font-family: monospace;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Light Mode */
+body.light-mode {
+  background: #fff;
+  color: #000;
+}
+body.light-mode .hero,
+body.light-mode .register,
+body.light-mode .stats-section {
+  background: #f9f9f9;
+  color: #000;
+}
+body.light-mode .feature,
+body.light-mode .course-list li,
+body.light-mode .toast {
+  background: #e0e0e0;
+  color: #000;
+}
+
+/* زر الوضع الليلي */
+.fixed-toggle {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  background: #111;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 999;
+}
+body.light-mode .fixed-toggle {
+  background: #ccc;
+  color: #000;
+}
+
+/* زر واتساب */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  font-size: 28px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+  z-index: 999;
+  transition: background 0.3s;
+}
+.whatsapp-float:hover {
+  background: #1ebe57;
+}

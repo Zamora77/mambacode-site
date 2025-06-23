@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAMBA CODE | كورسات برمجة</title>
+  <link rel="stylesheet" href="style.css"/>
+  <a href="login.html" class="cta-button">تسجيل الدخول</a>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1 class="logo">MAMBA CODE</h1>
+      <p class="tagline">اتعلم البرمجة مع أقوى الكورسات في العالم العربي</p>
+      <a href="#register" class="cta-button">ابدأ رحلتك الآن</a>
+    </div>
+  </header>
+ 
+    <button id="modeToggle" class="cta-button fixed-toggle">🌙 الوضع الليلي</button>
+
+    <!-- 💬 زر واتساب -->
+    <a href="https://wa.me/201552932225" class="whatsapp-float" target="_blank" title="تواصل معنا واتساب">💬</a>
+
+  <section id="courses" class="features">
+    <h2>ليه تتعلم معانا؟</h2>
+    <div class="feature-list">
+      <div class="feature scroll-fade"><h3>كورسات متكاملة</h3><p>شرح مفصل من البداية للاحتراف.</p></div>
+      <div class="feature scroll-fade"><h3>مشاريع عملية</h3><p>اتعلم من خلال مشاريع حقيقية تبني بها بورتفوليو.</p></div>
+      <div class="feature scroll-fade"><h3>دعم مباشر</h3><p>جروب دعم فني لحل أي مشكلة تواجهك.</p></div>
+    </div>
+  </section>
+
+  <section id="register" class="register scroll-fade">
+    <h2>سجل دلوقتي</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="الاسم الكامل" required/>
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required/>
+      <input type="password" id="password" placeholder="كلمة المرور" required />
+      <button type="submit">تسجيل</button>
+    </form>
+    <p id="thanksMessage" class="hidden">شكراً لتسجيلك! 📬 راجع بريدك الإلكتروني لتأكيد التسجيل.</p>
+  </section>
+
+  <section id="stats" class="stats-section scroll-fade">
+  <h2>📈 عدد المسجلين</h2>
+  <p id="count">جاري التحميل...</p>
+  <ul id="userList"></ul>
+ </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 MAMBA CODE. كل الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
