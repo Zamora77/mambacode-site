@@ -2,7 +2,7 @@
 MAMBA CODE 🚀 كورسات برمجة أونلاين | Modern landing page for developers in the making!
 # MAMBA CODE 👨‍💻🔥
 
-**MAMBA CODE** هو موقع تعليمي عصري لتعلم البرمجة باللغة العربية.  
+MAMBA CODE هو موقع تعليمي عصري لتعلم البرمجة باللغة العربية.  
 يوفر كورسات مجانية ومدفوعة في HTML, CSS, JavaScript وغيرها من تقنيات تطوير الويب 💻
 
 ---
@@ -53,7 +53,7 @@ MAMBA CODE 🚀 كورسات برمجة أونلاين | Modern landing page for
 
 ---
 
-© 2025 MAMBA CODE. جميع الحقوق محفوظة.
+
 
 <h1 align="center">MAMBA CODE 🐍💻</h1>
 <p align="center">
@@ -102,7 +102,7 @@ It offers a clean UI, smart registration, and a seamless learning experience.
 
 🔗 [View Site on GitHub Pages](https://your-username.github.io/mambacode-site/)
 
-> Replace `your-username` with your GitHub account name
+
 
 ---
 
@@ -111,3 +111,5 @@ It offers a clean UI, smart registration, and a seamless learning experience.
 ```bash
 git clone https://github.com/your-username/mambacode-site.git
 cd mambacode-site
+
+© 2025 MAMBA CODE. جميع الحقوق محفوظة.
