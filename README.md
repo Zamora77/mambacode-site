@@ -103,7 +103,7 @@ It offers a clean UI, smart registration, and a seamless learning experience.
 🔗 [View Site on GitHub Pages](https://your-username.github.io/mambacode-site/)
 
 
-
+© 2025 MAMBA CODE. جميع الحقوق محفوظة.
 ---
 
 ## 🛠️ Installation
@@ -112,4 +112,4 @@ It offers a clean UI, smart registration, and a seamless learning experience.
 git clone https://github.com/your-username/mambacode-site.git
 cd mambacode-site
 
-© 2025 MAMBA CODE. جميع الحقوق محفوظة.
+
